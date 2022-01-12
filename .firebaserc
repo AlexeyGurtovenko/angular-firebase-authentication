@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-auth-12-01-2022": {
+      "hosting": {
+        "angular-firebase-authentication": [
+          "ng-auth-12-01-2022"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-auth-12-01-2022"
+  }
+}
