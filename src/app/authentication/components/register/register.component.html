@@ -1,0 +1,51 @@
+<div class="absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 w-21v p-5 shadow-lg">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <base-input
+      #email
+      [id]="'email'"
+      [label]="'Email'"
+      [type]="'email'"
+      [name]="'email'"
+      [placeholder]="'Email'"
+      [prefixIcon]="'at-sign'"
+      [validators]="emailValidators"
+      [debounceTime]="0">
+    </base-input>
+
+    <base-input
+      #password
+      [id]="'password'"
+      [label]="'Password'"
+      [type]="isPassVisible ? 'text' : 'password'"
+      [name]="'password'"
+      [placeholder]="'Password'"
+      [prefixIcon]="'key'"
+      [suffixIcon]="isPassVisible ? 'eye-off' : 'eye'"
+      [debounceTime]="0"
+      [validators]="passValidators"
+      (suffixClick)="isPassVisible = !isPassVisible">
+    </base-input>
+
+    <base-input
+      #passwordConfirm
+      [id]="'password-confirmation'"
+      [label]="'Password confirmation'"
+      [type]="isPassConfirmVisible ? 'text' : 'password'"
+      [name]="'password-confirmation'"
+      [placeholder]="'Password confirmation'"
+      [prefixIcon]="'key'"
+      [suffixIcon]="isPassConfirmVisible ? 'eye-off' : 'eye'"
+      [debounceTime]="0"
+      [validators]="passValidators"
+      (suffixClick)="isPassConfirmVisible = !isPassConfirmVisible">
+    </base-input>
+
+    <spiner *ngIf="isLoading" class="self-center"></spiner>
+    <button *ngIf="!isLoading" type="submit" class="btn mt-3 hover:bg-blue-600 bg-blue-500 text-white">Sign up</button>
+
+    <div class="text-center mt-7">
+      <span class="text text_primary text-sm">Already have an account?</span>
+      <a routerLink="/auth/login" class="text text_primary text-sm link mx-1">Sign in</a>
+    </div>
+  </form>
+</div>

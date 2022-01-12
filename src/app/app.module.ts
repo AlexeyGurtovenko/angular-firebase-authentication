@@ -19,6 +19,7 @@ import * as Auth from './authentication';
 
     // auth
     Auth.LoginComponent,
+    Auth.RegisterComponent,
 
 
   ],
