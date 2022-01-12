@@ -9,3 +9,16 @@
 body {
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
 }
+
+// basic component styles
+.btn {
+  @apply w-full py-2 my-1 rounded-md font-semibold;
+}
+
+.text {
+  @apply text-gray-500 text-opacity-90 font-semibold select-none;
+}
+
+.link {
+  @apply font-bold text-blue-500 cursor-pointer;
+}
