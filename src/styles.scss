@@ -1,14 +1,20 @@
+// main font
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
 // tailwind css
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 
-// basic font
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
+// tailwind bug
+// body has to go before utilities
 body {
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
 }
+
+@import 'tailwindcss/utilities';
+
+// angular cdk overlay
+@import '~@angular/cdk/overlay-prebuilt.css';
 
 // basic component styles
 .btn {
