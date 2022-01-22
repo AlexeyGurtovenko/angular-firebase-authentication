@@ -1,0 +1,35 @@
+<ng-container *ngIf="user$ | async as user">
+  <div
+    class="flex items-center justify-center min-w-min p-2 hover:cursor-pointer"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin"
+    (click)="isOpen = !isOpen">
+    <img *ngIf="user.photoURL" [src]="user.photoURL" alt="User logo" class="w-10 h-10 rounded-full" />
+
+    <div *ngIf="!user.photoURL" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 border border-blue-300">
+      <svg-icon icon="user" class="w-7 h-7 text-gray-500"></svg-icon>
+    </div>
+
+    <span class="text text_primary ml-3 w-44">
+      {{ user.displayName || user.email || 'Unknown' }}
+    </span>
+
+    <svg-icon icon="chevron-down" class="w-4 h-4 ml-1 text-gray-600 min-w-min transition" [ngClass]="{ 'rotate-180': isOpen }"></svg-icon>
+  </div>
+
+  <ng-template
+    cdkConnectedOverlay
+    cdkConnectedOverlayHasBackdrop
+    cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="isOpen"
+    (backdropClick)="isOpen = false">
+    <div class="w-60 mt-2 mr-1.5 dropdown-menu divide-y divide-gray-100 divide-solid">
+      <!-- <div class="dropdown-menu__item">My profile</div>
+      <div class="dropdown-menu__item">Settings</div>
+      <div class="dropdown-menu__item">My profile</div>
+      <div class="dropdown-menu__item">Settings</div> -->
+      <div class="dropdown-menu__item link hover:text-red-500" (click)="logout()">Logout</div>
+    </div>
+  </ng-template>
+</ng-container>

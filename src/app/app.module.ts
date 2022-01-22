@@ -14,6 +14,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { environment } from '../environments/environment';
 
 import * as Auth from './authentication';
+import * as TopBar from './top-bar';
+
 import { GlobalErrorHandlerService } from './services/error-handler/global-error-handler.service';
 
 @NgModule({
@@ -23,7 +25,11 @@ import { GlobalErrorHandlerService } from './services/error-handler/global-error
     // auth
     Auth.LoginComponent,
     Auth.RegisterComponent,
-
+    
+    // top bar
+    TopBar.TopBarComponent,
+    TopBar.UserInfoComponent,
+    TopBar.NotificationBellComponent,
 
   ],
   imports: [

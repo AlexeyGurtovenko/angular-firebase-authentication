@@ -1,0 +1,25 @@
+<header class="h-8.5v flex items-center px-5 shadow-sm">
+  <nav class="w-full flex items-center">
+    <ul class="flex text-gray-500 text-opacity-85">
+      <li *ngFor="let link of links">
+        <a href="{{ link.path }}" class="font-bold mr-8">{{ link.name }}</a>
+      </li>
+    </ul>
+
+    <div class="w-full">
+      <base-input
+        class="float-right"
+        #search
+        [id]="'search'"
+        [type]="'text'"
+        [name]="'search'"
+        [placeholder]="'Search...'"
+        [prefixIcon]="'search'">
+      </base-input>
+    </div>
+
+    <app-notification-bell class="ml-16 mr-7" [newNotifications]="true" (bellClicked)="onBellClicked()"></app-notification-bell>
+
+    <app-user-info></app-user-info>
+  </nav>
+</header>

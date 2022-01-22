@@ -5,11 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { redirectUnauthorizedTo, redirectLoggedInTo, AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 
 import { LoginComponent, RegisterComponent } from './authentication';
+import { TopBarComponent } from './top-bar';
 
 const redirectLoggedInToHomePage = () => redirectLoggedInTo(['']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo('/auth/login');
 
 const routes: Routes = [
+  // Supposed to be a Home page
+  { path: '', component: TopBarComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+
   // authentication
   {
     path: 'auth',
