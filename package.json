@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "npm run generate-svg-sprite && ng serve",
     "build": "npm run generate-svg-sprite && ng build",
+    "deploy": "firebase deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate-svg-sprite": "svg-sprite -s --symbol-dest src/assets/icons --symbol-sprite sprite.svg --symbol-example true --symbol-example-dest index.html src/assets/icons/individual-icons/*.svg"
